@@ -124,7 +124,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </ListViewItem.RenderTransform>
-                    <Button x:Name="HomeBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Button x:Name="HomeBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="HomeBtn_Click">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
                             <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
                             <TextBlock Text="Home" Margin="10" VerticalAlignment="Center" Foreground="White"/>
@@ -140,7 +140,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </ListViewItem.RenderTransform>
-                    <Button x:Name="ServiceBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Button x:Name="ServiceBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="ServiceBtn_Click">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
                         <materialDesign:PackIcon Kind="ServiceToolbox" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
                         <TextBlock Text="Service" Margin="10" VerticalAlignment="Center" Foreground="White"/>
@@ -156,7 +156,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </ListViewItem.RenderTransform>
-                    <Button x:Name="EmployeeBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Button x:Name="EmployeeBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="EmployeeBtn_Click">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
                             <materialDesign:PackIcon Kind="People" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
                             <TextBlock Text="Employee" Margin="10" VerticalAlignment="Center" Foreground="White"/>
@@ -172,7 +172,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </ListViewItem.RenderTransform>
-                    <Button x:Name="RecordBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Button x:Name="RecordBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="RecordBtn_Click">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
                         <materialDesign:PackIcon Kind="Book" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
                         <TextBlock Text="Record" Margin="10" VerticalAlignment="Center" Foreground="White"/>
@@ -188,7 +188,7 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </ListViewItem.RenderTransform>
-                    <Button x:Name="BackBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Button x:Name="BackBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="BackBtn_Click">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
                             <materialDesign:PackIcon Kind="Backburger" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
                             <TextBlock Text="Back" Margin="10" VerticalAlignment="Center" Foreground="White"/>
@@ -230,7 +230,14 @@
                             <RowDefinition Height="30"/>
                         </Grid.RowDefinitions>
                         <TextBlock Text="Звезд" VerticalAlignment="Bottom" Foreground="#FFFBFBFB" Margin="5,0,5,5"/>
-                        <TextBlock Text="4.5K" VerticalAlignment="Top" Foreground="#FFFBFBFB" Grid.Row="1" Margin="10 0"/>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" >
+                            <TextBlock Text="4,5" Foreground="#DDFF6F0B" Margin="1" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="#DDFF6F0B" Margin="1" VerticalAlignment="Center" Width="12" Height="12"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="#DDFF6F0B" Margin="1" VerticalAlignment="Center" Width="12" Height="12"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="#DDFF6F0B" Margin="1" VerticalAlignment="Center" Width="12" Height="12"/>
+                            <materialDesign:PackIcon Kind="Star" Foreground="#DDFF6F0B" Margin="1" VerticalAlignment="Center" Width="12" Height="12"/>
+                            <materialDesign:PackIcon Kind="StarHalf" Foreground="#DDFF6F0B" Margin="1" VerticalAlignment="Center" Width="12" Height="12"/>
+                        </StackPanel>
 
                         <TextBlock Text="Отзывов" VerticalAlignment="Bottom" Foreground="#FFFBFBFB" Margin="5,0,5,5" Grid.Column="1"/>
                         <TextBlock Text="2.3K" VerticalAlignment="Top" Foreground="#FFFBFBFB" Grid.Row="1" Margin="10 0" Grid.Column="1"/>
@@ -242,7 +249,10 @@
                 </StackPanel>
             </Grid>
             <Grid>
-                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="1*" />
+               </Grid.RowDefinitions>
 
                 <Button x:Name="ButtonCloseMenu" 
                         Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
@@ -255,8 +265,13 @@
                     <materialDesign:PackIcon Kind="Menu" Width="25" Height="25" Foreground="gray"/>
                 </Button>
 
+                <Frame
+                    NavigationUIVisibility="Hidden"
+                    Grid.Row="1"
+                    Name="NavigationFrm"/>
 
-                
+
+
             </Grid>
         </Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="40" HorizontalAlignment="Right" Margin="10">

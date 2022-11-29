@@ -1,7 +1,9 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using HaidressersApp.AppData;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -55,6 +57,41 @@ namespace HaidressersApp.View.Windows
 
         private void LogimBtn_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var userObj = ConnectClass.entities.User.Where(x => x.Login == txtUsername.Text && x.Password == txtPassword.Password).FirstOrDefault();
+                if (userObj == null)
+                {
+                    MessageBox.Show("Такого пользователя нет", "Mistake", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    switch (userObj.IdRole)
+                    {
+                        case 1:
+                            MessageBox.Show("Hello, Administrator " + userObj.Name + "!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                            break;
+
+                        case 2:
+                            MessageBox.Show("Hello, Barber " + userObj.Name + "!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                            break;
+
+                        case 3:
+                            MessageBox.Show("Hello, Client " + userObj.Name + "!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                            break;
+
+                        default:
+                            MessageBox.Show("No data detected!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            break;
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+
+                MessageBox.Show("Mistake" + Ex.Message.ToString() + "Critical operation of the application", "Notification", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+            }
             Menu au = new Menu();
             au.Show();
             Close();
@@ -66,6 +103,11 @@ namespace HaidressersApp.View.Windows
             Application.Current.Shutdown();
         }
 
-        
+        private void SignupBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CreateAccount account = new CreateAccount();
+            account.Show();
+            Close();
+        }
     }
 }

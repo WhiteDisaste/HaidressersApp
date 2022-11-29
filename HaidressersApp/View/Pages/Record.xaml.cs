@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HaidressersApp.AppData;
+using HaidressersApp.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,19 @@ namespace HaidressersApp.View.Pages
         public Record()
         {
             InitializeComponent();
+            CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();
+            CustomersList.ItemsSource = ConnectClass.entities.User.ToList();
+            CustomersList.ItemsSource = ConnectClass.entities.Uchet.ToList();
+        }
+
+        private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            CustomersList.ItemsSource = ConnectClass.entities.Uchet.ToList();
+        }
+
+        private void CustomersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Uchet journal = (Uchet)CustomersList.SelectedItem;
         }
     }
 }

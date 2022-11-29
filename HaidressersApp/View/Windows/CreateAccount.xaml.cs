@@ -23,5 +23,19 @@ namespace HaidressersApp.View.Windows
         {
             InitializeComponent();
         }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Authorization authorization = new Authorization();
+            authorization.Show();
+            this.Close();
+        }
+
+        private void LogimBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            Close();
+        }
     }
 }

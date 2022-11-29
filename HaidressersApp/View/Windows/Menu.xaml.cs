@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HaidressersApp.View.Pages;
+using HaidressersApp.View.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +42,33 @@ namespace HaidressersApp
         {
             ButtonOpenMenu.Visibility = Visibility.Visible;
             ButtonCloseMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void RecordBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationFrm.Navigate(new Record());
+        }
+
+        private void ServiceBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationFrm.Navigate(new Services());
+        }
+
+        private void EmployeeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationFrm.Navigate(new Employee());
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Authorization authorization = new Authorization();
+            authorization.Show();
+            Close();
+        }
+
+        private void HomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationFrm.Navigate(new Home());
         }
     }
 }
