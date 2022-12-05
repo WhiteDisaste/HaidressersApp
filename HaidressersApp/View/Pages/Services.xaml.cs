@@ -1,5 +1,6 @@
 ﻿using HaidressersApp.AppData;
 using HaidressersApp.Model;
+using HaidressersApp.View.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,17 @@ namespace HaidressersApp.View.Pages
         private void CustomersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Service journal = (Service)CustomersList.SelectedItem;
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddService service = new AddService();
+            service.Show();
+        }
+
+        private void Delettn_Click(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }

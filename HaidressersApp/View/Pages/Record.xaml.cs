@@ -1,5 +1,6 @@
 ﻿using HaidressersApp.AppData;
 using HaidressersApp.Model;
+using HaidressersApp.View.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,32 @@ namespace HaidressersApp.View.Pages
         private void CustomersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Uchet journal = (Uchet)CustomersList.SelectedItem;
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddRecord record = new AddRecord();
+            record.Show();
+        }
+
+        
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            GetSearch();
+        }
+        private void GetSearch() 
+        {
+            var select = ConnectClass.entities.Record.ToList();
+
+            select = select.Where(Sel =>
+            Sel.Date.ToString().ToLower().Contains(SearchTextBox.Text.ToLower())).ToList();
+            CustomersList.ItemsSource = select.OrderBy(Cookie => Cookie.IdUser).ToList(); 
+        }
+
+        private void Delettn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

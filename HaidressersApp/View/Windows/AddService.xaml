@@ -39,12 +39,12 @@
                 <Button Margin="0 140 0 0" Name="LogimBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}"
                         materialDesign:ShadowAssist.ShadowDepth="Depth0"
                         Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="10"
-                        FontSize="18" Content="Создать услугу" Cursor="Hand" >
+                        FontSize="18" Content="Создать услугу" Cursor="Hand" Click="LogimBtn_Click" >
                 </Button>
                 <Button Margin="0 20 0 0" Name="BackBtn" Style="{StaticResource MaterialDesignFlatButton}"
                         materialDesign:ShadowAssist.ShadowDepth="Depth0"
                         Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="10"
-                        FontSize="18" Content="Назад" Cursor="Hand"  />
+                        FontSize="18" Content="Назад" Cursor="Hand" Click="BackBtn_Click"  />
             </StackPanel>
         </materialDesign:DialogHost>
     </materialDesign:Card>

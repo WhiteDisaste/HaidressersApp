@@ -25,6 +25,35 @@ namespace HaidressersApp.View.Windows
         public AddRecord()
         {
             InitializeComponent();
-        } 
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void LogimBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string mes = "";
+            if (string.IsNullOrWhiteSpace(txtUsername.Text))
+                mes += "Выберите пользователя\n";           
+            if (string.IsNullOrWhiteSpace(dapicCalendar.Text))
+                mes += "Введите дату посещения\n";
+            if (mes != "")
+            {
+                MessageBox.Show(mes);
+                mes = "";
+                return;
+            }
+            Record record = new Record()
+            {
+                User = txtUsername.SelectedItem as User,
+                Date = (DateTime)dapicCalendar.SelectedDate
+            };
+            ConnectClass.entities.Record.Add(record);
+            ConnectClass.entities.SaveChanges();
+            MessageBox.Show("запись добавлена");
+        }
     }
 }
+
