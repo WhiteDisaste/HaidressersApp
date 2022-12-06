@@ -49,5 +49,10 @@ namespace HaidressersApp.View.Pages
         {
            
         }
+
+        private void SelectBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

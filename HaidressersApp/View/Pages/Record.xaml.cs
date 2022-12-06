@@ -23,12 +23,11 @@ namespace HaidressersApp.View.Pages
     /// </summary>
     public partial class Record : Page
     {
+        public List<RecordClass> record = new List<RecordClass>();
         public Record()
         {
             InitializeComponent();
-            CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();
-            CustomersList.ItemsSource = ConnectClass.entities.User.ToList();
-            CustomersList.ItemsSource = ConnectClass.entities.Uchet.ToList();
+            record.Add(new RecordClass("2022/10/11", "Каримова", "Милена", "admin"));
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -46,25 +45,33 @@ namespace HaidressersApp.View.Pages
             AddRecord record = new AddRecord();
             record.Show();
         }
-
-        
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            GetSearch();
-        }
-        private void GetSearch() 
-        {
-            var select = ConnectClass.entities.Record.ToList();
-
-            select = select.Where(Sel =>
-            Sel.Date.ToString().ToLower().Contains(SearchTextBox.Text.ToLower())).ToList();
-            CustomersList.ItemsSource = select.OrderBy(Cookie => Cookie.IdUser).ToList(); 
-        }
-
+             
         private void Delettn_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        public void LoadUser(List<User> _user)
+        {
+            CustomersList.Items.Clear(); // очищаем лист с элементами
+
+            for (int i = 0; i < _user.Count; i++) // перебираем элементы
+            {
+                CustomersList.Items.Add(_user[i]); // добавляем элементы в ListBox
+            }
+        }
+        private void ActiveFilter(object sender, RoutedEventArgs e)
+        {
+            List<User> newUsers = new List<User>();
+            //newUsers = user;
+
+            //if (genderFilter.SelectedIndex == 0)
+            //    newUsers = user.FindAll(x => x.gender == "M");
+            //else
+            //    newUsers = user.FindAll(x => x.gender == "F");
+            //newUsers = newUsers.FindAll(x => x.name.Contains(nameFilter.Text));
+            //LoadUser(newUsers);
+
+        }
+        
     }
 }
