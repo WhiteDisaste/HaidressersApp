@@ -73,8 +73,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppData\ConnectClass.cs" />
-    <Compile Include="AppData\RecordClass.cs" />
-    <Compile Include="AppData\ServiceClass.cs" />
     <Compile Include="Model\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,13 +118,10 @@
     <Compile Include="View\Pages\Services.xaml.cs">
       <DependentUpon>Services.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\AddEmployee.xaml.cs">
-      <DependentUpon>AddEmployee.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Windows\AddRecord.xaml.cs">
+    <Compile Include="View\Windows\AddWindows\AddRecord.xaml.cs">
       <DependentUpon>AddRecord.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\AddService.xaml.cs">
+    <Compile Include="View\Windows\AddWindows\AddService.xaml.cs">
       <DependentUpon>AddService.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\Authorization.xaml.cs">
@@ -137,6 +132,12 @@
     </Compile>
     <Compile Include="View\Windows\HelpME.xaml.cs">
       <DependentUpon>HelpME.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\UpdateWindows\UpdateRecord.xaml.cs">
+      <DependentUpon>UpdateRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\UpdateWindows\UpdateService.xaml.cs">
+      <DependentUpon>UpdateService.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Pages\Employee.xaml">
       <SubType>Designer</SubType>
@@ -154,15 +155,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\AddEmployee.xaml">
+    <Page Include="View\Windows\AddWindows\AddRecord.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\AddRecord.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Windows\AddService.xaml">
+    <Page Include="View\Windows\AddWindows\AddService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,6 +184,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Windows\HelpME.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\UpdateWindows\UpdateRecord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\UpdateWindows\UpdateService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -225,7 +230,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Icons\logo.png" />
   </ItemGroup>
@@ -237,16 +253,6 @@
     <Resource Include="Assets\Pages\6.jpg" />
     <Resource Include="Assets\Pages\7.jpg" />
     <Resource Include="Assets\Pages\8.jpg" />
-    <Content Include="Model\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
-    <Content Include="Model\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

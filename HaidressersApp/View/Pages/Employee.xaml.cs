@@ -23,26 +23,48 @@ namespace HaidressersApp.View.Pages
     /// </summary>
     public partial class Employee : Page
     {
+        List<User> user = new List<User>();
         public Employee()
         {
             InitializeComponent();
-            CustomersList.ItemsSource = ConnectClass.entities.User.ToList();
+            CustomersList.DataContext = ConnectClass.entities.User.ToList();
+            LoadUser(user);
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            CustomersList.ItemsSource = ConnectClass.entities.User.ToList();
+            //ustomersList.DataContext = ConnectClass.entities.User.ToList();
         }
 
         private void CustomersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            User journal = (User)CustomersList.SelectedItem;
+            
         }
 
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        public void LoadUser(List<User> _user)
         {
-            AddEmployee employee = new AddEmployee();
-            employee.Show();
+            CustomersList.Items.Clear(); // очищаем лист с элементами
+
+            for (int i = 0; i < _user.Count; i++) // перебираем элементы
+            {
+                CustomersList.Items.Add(_user[i]); // добавляем элементы в ListBox
+            }
+        }
+        private void ActiveFilter_Click(object sender, RoutedEventArgs e)
+        {
+            List<User> users = new List<User>();
+            users = user;
+            if (txtActivityName.SelectedIndex == 0)
+            {
+                users = user.FindAll(x => x.Role.Title == "admin");
+            }
+            if (txtActivityName.SelectedIndex == 1)
+            {
+                users = user.FindAll(x => x.Role.Title == "barber");
+            }
+            else
+                users = user.FindAll(x => x.Role.Title == "client");
+            LoadUser(users);
         }
     }
 }

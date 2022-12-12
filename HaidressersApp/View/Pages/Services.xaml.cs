@@ -54,5 +54,11 @@ namespace HaidressersApp.View.Pages
         {
 
         }
+
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateService update = new UpdateService();
+            update.Show();
+        }
     }
 }

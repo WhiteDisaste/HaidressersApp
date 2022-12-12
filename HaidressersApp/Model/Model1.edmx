@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище HairdressersAppDEminModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище HairdressersAppDEminModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Record">
           <Key>
             <PropertyRef Name="Id" />
@@ -18,14 +18,14 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar(max)" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -52,15 +52,15 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Telephone" Type="nvarchar(max)" />
           <Property Name="DateBirth" Type="date" />
           <Property Name="IdRole" Type="int" />
-          <Property Name="Login" Type="nvarchar" MaxLength="50" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Login" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
         </EntityType>
-        <Association Name="FK_Record_User1">
+        <Association Name="FK_Record_User">
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
           <End Role="Record" Type="Self.Record" Multiplicity="*" />
           <ReferentialConstraint>
@@ -69,18 +69,6 @@
             </Principal>
             <Dependent Role="Record">
               <PropertyRef Name="IdUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Uchet_Record">
-          <End Role="Record" Type="Self.Record" Multiplicity="0..1" />
-          <End Role="Uchet" Type="Self.Uchet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Record">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Uchet">
-              <PropertyRef Name="IdRecord" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -127,13 +115,9 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Uchet" EntityType="Self.Uchet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Record_User1" Association="Self.FK_Record_User1">
+          <AssociationSet Name="FK_Record_User" Association="Self.FK_Record_User">
             <End Role="User" EntitySet="User" />
             <End Role="Record" EntitySet="Record" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Uchet_Record" Association="Self.FK_Uchet_Record">
-            <End Role="Record" EntitySet="Record" />
-            <End Role="Uchet" EntitySet="Uchet" />
           </AssociationSet>
           <AssociationSet Name="FK_Uchet_Service" Association="Self.FK_Uchet_Service">
             <End Role="Service" EntitySet="Service" />
@@ -148,38 +132,11 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HairdressersAppDEminModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="HairdressersAppDEminEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Record" EntityType="HairdressersAppDEminModel.Record" />
-          <EntitySet Name="Role" EntityType="HairdressersAppDEminModel.Role" />
-          <EntitySet Name="Service" EntityType="HairdressersAppDEminModel.Service" />
-          <EntitySet Name="sysdiagrams" EntityType="HairdressersAppDEminModel.sysdiagrams" />
-          <EntitySet Name="Uchet" EntityType="HairdressersAppDEminModel.Uchet" />
-          <EntitySet Name="User" EntityType="HairdressersAppDEminModel.User" />
-          <AssociationSet Name="FK_Record_User1" Association="HairdressersAppDEminModel.FK_Record_User1">
-            <End Role="User" EntitySet="User" />
-            <End Role="Record" EntitySet="Record" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Uchet_Record" Association="HairdressersAppDEminModel.FK_Uchet_Record">
-            <End Role="Record" EntitySet="Record" />
-            <End Role="Uchet" EntitySet="Uchet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Role" Association="HairdressersAppDEminModel.FK_User_Role">
-            <End Role="Role" EntitySet="Role" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Uchet_Service" Association="HairdressersAppDEminModel.FK_Uchet_Service">
-            <End Role="Service" EntitySet="Service" />
-            <End Role="Uchet" EntitySet="Uchet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Uchet_User" Association="HairdressersAppDEminModel.FK_Uchet_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Uchet" EntitySet="Uchet" />
-          </AssociationSet>
-        </EntityContainer>
         <EntityType Name="Record">
           <Key>
             <PropertyRef Name="Id" />
@@ -187,31 +144,30 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Date" Type="DateTime" Precision="0" />
           <Property Name="IdUser" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="HairdressersAppDEminModel.FK_Record_User1" FromRole="Record" ToRole="User" />
-          <NavigationProperty Name="Uchet" Relationship="HairdressersAppDEminModel.FK_Uchet_Record" FromRole="Record" ToRole="Uchet" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Record_User" FromRole="Record" ToRole="User" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="User" Relationship="HairdressersAppDEminModel.FK_User_Role" FromRole="Role" ToRole="User" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="Uchet" Relationship="HairdressersAppDEminModel.FK_Uchet_Service" FromRole="Service" ToRole="Uchet" />
+          <NavigationProperty Name="Uchet" Relationship="Self.FK_Uchet_Service" FromRole="Service" ToRole="Uchet" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
@@ -225,29 +181,28 @@
           <Property Name="IdUser" Type="Int32" />
           <Property Name="IdRecord" Type="Int32" />
           <Property Name="IdService" Type="Int32" />
-          <NavigationProperty Name="Record" Relationship="HairdressersAppDEminModel.FK_Uchet_Record" FromRole="Uchet" ToRole="Record" />
-          <NavigationProperty Name="Service" Relationship="HairdressersAppDEminModel.FK_Uchet_Service" FromRole="Uchet" ToRole="Service" />
-          <NavigationProperty Name="User" Relationship="HairdressersAppDEminModel.FK_Uchet_User" FromRole="Uchet" ToRole="User" />
+          <NavigationProperty Name="Service" Relationship="Self.FK_Uchet_Service" FromRole="Uchet" ToRole="Service" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Uchet_User" FromRole="Uchet" ToRole="User" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DateBirth" Type="DateTime" Precision="0" />
           <Property Name="IdRole" Type="Int32" />
-          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Record" Relationship="HairdressersAppDEminModel.FK_Record_User1" FromRole="User" ToRole="Record" />
-          <NavigationProperty Name="Role" Relationship="HairdressersAppDEminModel.FK_User_Role" FromRole="User" ToRole="Role" />
-          <NavigationProperty Name="Uchet" Relationship="HairdressersAppDEminModel.FK_Uchet_User" FromRole="User" ToRole="Uchet" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Record" Relationship="Self.FK_Record_User" FromRole="User" ToRole="Record" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Uchet" Relationship="Self.FK_Uchet_User" FromRole="User" ToRole="Uchet" />
         </EntityType>
-        <Association Name="FK_Record_User1">
-          <End Type="HairdressersAppDEminModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="HairdressersAppDEminModel.Record" Role="Record" Multiplicity="*" />
+        <Association Name="FK_Record_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Record" Type="Self.Record" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -257,21 +212,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Uchet_Record">
-          <End Type="HairdressersAppDEminModel.Record" Role="Record" Multiplicity="0..1" />
-          <End Type="HairdressersAppDEminModel.Uchet" Role="Uchet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Record">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Uchet">
-              <PropertyRef Name="IdRecord" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_User_Role">
-          <End Type="HairdressersAppDEminModel.Role" Role="Role" Multiplicity="0..1" />
-          <End Type="HairdressersAppDEminModel.User" Role="User" Multiplicity="*" />
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Role">
               <PropertyRef Name="Id" />
@@ -282,8 +225,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Uchet_Service">
-          <End Type="HairdressersAppDEminModel.Service" Role="Service" Multiplicity="0..1" />
-          <End Type="HairdressersAppDEminModel.Uchet" Role="Uchet" Multiplicity="*" />
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="Uchet" Type="Self.Uchet" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Service">
               <PropertyRef Name="Id" />
@@ -294,8 +237,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Uchet_User">
-          <End Type="HairdressersAppDEminModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="HairdressersAppDEminModel.Uchet" Role="Uchet" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Uchet" Type="Self.Uchet" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="Id" />
@@ -305,70 +248,94 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="HairdressersAppDEminEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Record" EntityType="Self.Record" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Service" EntityType="Self.Service" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Uchet" EntityType="Self.Uchet" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK_Record_User" Association="Self.FK_Record_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Record" EntitySet="Record" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uchet_Service" Association="Self.FK_Uchet_Service">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Uchet" EntitySet="Uchet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uchet_User" Association="Self.FK_Uchet_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Uchet" EntitySet="Uchet" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище HairdressersAppDEminModelContainer" CdmEntityContainer="HairdressersAppDEminEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище HairdressersAppDEminModelContainer" CdmEntityContainer="HairdressersAppDEminEntities1">
           <EntitySetMapping Name="Record">
             <EntityTypeMapping TypeName="HairdressersAppDEminModel.Record">
               <MappingFragment StoreEntitySet="Record">
-                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Role">
             <EntityTypeMapping TypeName="HairdressersAppDEminModel.Role">
               <MappingFragment StoreEntitySet="Role">
-                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Service">
             <EntityTypeMapping TypeName="HairdressersAppDEminModel.Service">
               <MappingFragment StoreEntitySet="Service">
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="HairdressersAppDEminModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Uchet">
             <EntityTypeMapping TypeName="HairdressersAppDEminModel.Uchet">
               <MappingFragment StoreEntitySet="Uchet">
-                <ScalarProperty Name="IdService" ColumnName="IdService" />
-                <ScalarProperty Name="IdRecord" ColumnName="IdRecord" />
-                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="IdRecord" ColumnName="IdRecord" />
+                <ScalarProperty Name="IdService" ColumnName="IdService" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="HairdressersAppDEminModel.User">
               <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
-                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
-                <ScalarProperty Name="DateBirth" ColumnName="DateBirth" />
-                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="DateBirth" ColumnName="DateBirth" />
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

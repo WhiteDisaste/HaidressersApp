@@ -13,10 +13,10 @@ namespace HaidressersApp.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HairdressersAppDEminEntities : DbContext
+    public partial class HairdressersAppDEminEntities1 : DbContext
     {
-        public HairdressersAppDEminEntities()
-            : base("name=HairdressersAppDEminEntities")
+        public HairdressersAppDEminEntities1()
+            : base("name=HairdressersAppDEminEntities1")
         {
         }
     

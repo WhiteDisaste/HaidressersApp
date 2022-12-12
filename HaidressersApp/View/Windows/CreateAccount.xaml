@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HaidressersApp.View.Windows"
         mc:Ignorable="d"
-        Title="CreateAccount" Height="800" Width="450"
+        Title="CreateAccount" Height="800" Width="850"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="{x:Null}"
@@ -27,19 +27,48 @@
                            FontSize="28" FontWeight="Bold" Text="Barber Shop"/>
                 <TextBlock Margin="0 25 0 5" HorizontalAlignment="Center"
                            FontSize="17" FontWeight="SemiBold" Text="Введите данные чтобы создать аккаунт"/>
-                <TextBox Margin="0 50 0 0" Name="txtUsername" Width="300"
+                <StackPanel Margin="0 50 0 0" Orientation="Horizontal">
+                    <TextBox Margin="60 0 0 0"  Name="txtUserLogin" Width="300"
                     FontSize="18" materialDesign:HintAssist.Hint="Логин"
                     BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                    <TextBox Margin="80 0 0 0"  Name="txtUsername" Width="300"
+                    FontSize="18" materialDesign:HintAssist.Hint="Имя"
+                    BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                </StackPanel>
 
-                <PasswordBox Margin="0 20 0 0" Name="txtPassword" Width="300"
+                <StackPanel Orientation="Horizontal">
+                    <PasswordBox Margin="60 20 0 0" Name="txtPassword" Width="300"
                              FontSize="18"  materialDesign:HintAssist.Hint="Пароль"
                               BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
                          Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
-                <PasswordBox Margin="0 20 0 0" Name="txtPassword2" Width="300"
+                    <TextBox Margin="80 20 0 0" Name="txtUsersurname" Width="300"
+                    FontSize="18" materialDesign:HintAssist.Hint="Фамилия"
+                    BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <PasswordBox Margin="60 20 0 0" Name="txtPassword2" Width="300"
                              FontSize="18"  materialDesign:HintAssist.Hint="Подтвердите пароль"
                               BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
                          Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
+                    <TextBox Margin="80 20 0 0" Name="txtUserTelephone" Width="300"
+                    FontSize="18" materialDesign:HintAssist.Hint="Телефон"
+                    BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                </StackPanel>
+                 
+           
+                
+
+                <DatePicker Grid.Column="1" Margin="380 20 0 0" Height="60" Name="dapicCalendar" Width="300"
+                    FontSize="18" materialDesign:HintAssist.Hint="Выбор даты"
+                    BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
+                         Style="{StaticResource MaterialDesignOutlinedDatePicker}" VerticalAlignment="Stretch"/>
+                
+               
 
 
                 <Button Margin="0 40 0 0" Name="LogimBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}"

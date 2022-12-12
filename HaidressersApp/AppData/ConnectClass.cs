@@ -9,6 +9,6 @@ namespace HaidressersApp.AppData
 {
     internal class ConnectClass
     {
-        public static HairdressersAppDEminEntities entities = new HairdressersAppDEminEntities();
+        public static HairdressersAppDEminEntities1 entities = new HairdressersAppDEminEntities1();
     }
 }

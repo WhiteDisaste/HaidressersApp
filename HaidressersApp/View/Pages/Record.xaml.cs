@@ -23,28 +23,23 @@ namespace HaidressersApp.View.Pages
     /// Логика взаимодействия для Record.xaml
     /// </summary>
     public partial class Record : Page
-    {
-        public List<RecordClass> record = new List<RecordClass>();
+    {     
         public Record()
         {
             InitializeComponent();
-            record.Add(new RecordClass("2022/10/11", "Каримова", "Милена", "admin"));
-            record.Add(new RecordClass("2022/10/11", "Демин", "Данила", "admin"));
-            record.Add(new RecordClass("2022/10/11", "Карпова", "Милена", "barber"));
-            record.Add(new RecordClass("2022/10/11", "Каримова", "Милена", "barber"));
-            record.Add(new RecordClass("2022/10/11", "Маслова", "Милена", "client"));
-            record.Add(new RecordClass("2022/10/11", "Макаркин", "Егор", "client"));
-            LoadUser(record);
+
+            CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();
+            CustomersList.ItemsSource = ConnectClass.entities.User.ToList();
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-           // CustomersList.ItemsSource = ConnectClass.entities.Uchet.ToList();
+            CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();
         }
 
         private void CustomersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Uchet journal = (Uchet)CustomersList.SelectedItem;
+            
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
@@ -59,32 +54,40 @@ namespace HaidressersApp.View.Pages
             CustomersList.Items.RemoveAt(0);
             MessageBox.Show("Запись удалена " + "!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
-        public void LoadUser(List<RecordClass> _record)
-        {
-            CustomersList.Items.Clear(); // очищаем лист с элементами
-
-            for (int i = 0; i < _record.Count; i++) // перебираем элементы
-            {
-                CustomersList.Items.Add(_record[i]); // добавляем элементы в ListBox
-            }
-        }
-        
 
         private void ActiveFilter_Click(object sender, RoutedEventArgs e)
         {
-            List<RecordClass> newRecord = new List<RecordClass>();
-            newRecord = record;
+           
+        }
 
-            if (txtActivityName.SelectedIndex == 0)
-                newRecord = record.FindAll(x => x.Title == "admin");
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateRecord update = new UpdateRecord();
+            update.Show();
+        }
+
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (SearchTextBox.Text.Length == 0) 
+            {
+                SearchTextTextBlock.Visibility = Visibility.Visible; 
+                CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();
+            }
             else
-                newRecord = record.FindAll(x => x.Title == "client");
-            if (txtActivityName.SelectedIndex == 2)
-                newRecord = record.FindAll(x => x.Title == "barber");
+            {               
+                SearchTextTextBlock.Visibility = Visibility.Hidden; 
+                GetSearch(); 
+            }
+        }
+        private void GetSearch() 
+        {
+            var Sweep = ConnectClass.entities.Record.ToList(); 
 
-            newRecord = newRecord.FindAll(x => x.Title.Contains(SearchTextBox.Text));
+            Sweep = Sweep.Where(Cookie => 
+            Cookie.Date.ToString().ToLower().Contains(SearchTextBox.Text.ToLower()) || 
+            Cookie.User.ToString().Contains(SearchTextBox.Text.ToLower())).ToList(); 
 
-            LoadUser(newRecord);
+            CustomersList.ItemsSource = Sweep.OrderBy(Cookie => Cookie.Id).ToList(); 
         }
     }
 }

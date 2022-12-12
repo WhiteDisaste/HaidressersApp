@@ -19,7 +19,6 @@ namespace HaidressersApp.Model
         public Nullable<int> IdRecord { get; set; }
         public Nullable<int> IdService { get; set; }
     
-        public virtual Record Record { get; set; }
         public virtual Service Service { get; set; }
         public virtual User User { get; set; }
     }
