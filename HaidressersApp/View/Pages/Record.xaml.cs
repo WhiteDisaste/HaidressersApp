@@ -50,16 +50,15 @@ namespace HaidressersApp.View.Pages
              
         private void Delettn_Click(object sender, RoutedEventArgs e)
         {
-            // Removes the first item in the list.
-            CustomersList.Items.RemoveAt(0);
-            MessageBox.Show("Запись удалена " + "!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (MessageBox.Show("Удалить?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes) 
+            {
+                var record = CustomersList.SelectedItem as Record; 
+                ConnectClass.entities.Record.Remove(record); 
+                ConnectClass.entities.SaveChanges(); 
+                CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();               
+            }
         }
-
-        private void ActiveFilter_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
+      
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
             UpdateRecord update = new UpdateRecord();
