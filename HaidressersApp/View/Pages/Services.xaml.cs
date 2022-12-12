@@ -3,6 +3,7 @@ using HaidressersApp.Model;
 using HaidressersApp.View.Windows;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,26 +40,10 @@ namespace HaidressersApp.View.Pages
             Service journal = (Service)CustomersList.SelectedItem;
         }
 
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
-        {
-            AddService service = new AddService();
-            service.Show();
-        }
-
-        private void Delettn_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
         private void SelectBtn_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
-        {
-            UpdateService update = new UpdateService();
-            update.Show();
+            CustomersList.Items.SortDescriptions.Add(
+        new SortDescription("Content", ListSortDirection.Descending));
         }
     }
 }

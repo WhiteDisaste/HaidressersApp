@@ -121,9 +121,6 @@
     <Compile Include="View\Windows\AddWindows\AddRecord.xaml.cs">
       <DependentUpon>AddRecord.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\AddWindows\AddService.xaml.cs">
-      <DependentUpon>AddService.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Windows\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
@@ -135,9 +132,6 @@
     </Compile>
     <Compile Include="View\Windows\UpdateWindows\UpdateRecord.xaml.cs">
       <DependentUpon>UpdateRecord.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Windows\UpdateWindows\UpdateService.xaml.cs">
-      <DependentUpon>UpdateService.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Pages\Employee.xaml">
       <SubType>Designer</SubType>
@@ -156,10 +150,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Windows\AddWindows\AddRecord.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Windows\AddWindows\AddService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,10 +178,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Windows\UpdateWindows\UpdateRecord.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Windows\UpdateWindows\UpdateService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

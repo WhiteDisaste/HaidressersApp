@@ -52,7 +52,7 @@ namespace HaidressersApp.View.Pages
         {
             if (MessageBox.Show("Удалить?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes) 
             {
-                var record = CustomersList.SelectedItem as Record; 
+                var record = CustomersList.SelectedItem as Model.Record; 
                 ConnectClass.entities.Record.Remove(record); 
                 ConnectClass.entities.SaveChanges(); 
                 CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();               
@@ -61,8 +61,10 @@ namespace HaidressersApp.View.Pages
       
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
-            UpdateRecord update = new UpdateRecord();
-            update.Show();
+            Model.Record record = (Model.Record) CustomersList.SelectedItem;
+            UpdateRecord update = new UpdateRecord(record);
+            update.Show();  
+            
         }
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)

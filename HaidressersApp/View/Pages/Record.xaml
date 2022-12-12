@@ -38,6 +38,7 @@
                         Height="40" Width="150" materialDesign:ButtonAssist.CornerRadius="10"
                         FontSize="14" Content="Delete Record"  Cursor="Hand" HorizontalAlignment="Right" Click="Delettn_Click" />
             </StackPanel>
+            </StackPanel>
             <ListView Grid.Row="1" x:Name="CustomersList"
                   FontSize="30" SelectionChanged="CustomersList_SelectionChanged">
             <ListView.View>
