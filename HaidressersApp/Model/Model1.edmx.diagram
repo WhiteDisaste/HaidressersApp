@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7639bd304c154a38a73efb6baf89e5fd" Name="Diagram1">
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.Record" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.Role" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.Service" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.Uchet" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.User" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
-        <AssociationConnector Association="HairdressersAppDEminModel.FK_Record_User" ManuallyRouted="false" />
-        <AssociationConnector Association="HairdressersAppDEminModel.FK_User_Role" ManuallyRouted="false" />
-        <AssociationConnector Association="HairdressersAppDEminModel.FK_Uchet_Service" ManuallyRouted="false" />
-        <AssociationConnector Association="HairdressersAppDEminModel.FK_Uchet_User" ManuallyRouted="false" />
+      <Diagram DiagramId="c42fb6a71082407499c67c8b940c2bed" Name="Diagram1">
+        <EntityTypeShape EntityType="HairdressersAppDEminModel.Record" Width="1.5" PointX="3" PointY="5.125" />
+        <EntityTypeShape EntityType="HairdressersAppDEminModel.Role" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="HairdressersAppDEminModel.Service" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="HairdressersAppDEminModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HairdressersAppDEminModel.Uchet" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="HairdressersAppDEminModel.User" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="HairdressersAppDEminModel.FK_Uchet_Record1" />
+        <AssociationConnector Association="HairdressersAppDEminModel.FK_User_Role" />
+        <AssociationConnector Association="HairdressersAppDEminModel.FK_Uchet_Service" />
+        <AssociationConnector Association="HairdressersAppDEminModel.FK_Uchet_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

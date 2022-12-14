@@ -24,13 +24,17 @@
                 <TextBlock Margin="0 10 0 5" HorizontalAlignment="Center"
                            FontSize="28" FontWeight="Bold" Text="Barber Shop"/>
 
-                <ComboBox Margin="0 60 0 0" Name="txtUsername" Width="300"
-                    FontSize="18" materialDesign:HintAssist.Hint="Клиент"
+                <TextBox Margin="0 40 0 0" Name="txtUsername" Width="300"
+                    FontSize="18" materialDesign:HintAssist.Hint="Имя"
                     BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
-                         Style="{StaticResource MaterialDesignOutlinedComboBox}"/>
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
+                <TextBox Margin="0 20 0 0" Name="txtUsersurname" Width="300"
+                    FontSize="18" materialDesign:HintAssist.Hint="Фамилия"
+                    BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
+                         Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
 
-               
-                <DatePicker Grid.Column="1" Margin="0 40 0 0" Height="60" Name="dapicCalendar" Width="300"
+
+                <DatePicker Grid.Column="1" Margin="0 20 0 0" Height="60" Name="dapicCalendar" Width="300"
                     FontSize="18" materialDesign:HintAssist.Hint="Выбор даты"
                     BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}"
                          Style="{StaticResource MaterialDesignOutlinedDatePicker}" VerticalAlignment="Stretch"/>

@@ -24,6 +24,7 @@ namespace HaidressersApp.View.Windows
         public CreateAccount()
         {
             InitializeComponent();
+            txtUserRole.ItemsSource = ConnectClass.entities.Role.ToList();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -42,8 +43,10 @@ namespace HaidressersApp.View.Windows
                 mes += "Введите фамилию пользователя\n";
             if (string.IsNullOrWhiteSpace(txtUserTelephone.Text))
                 mes += "Введите телефон пользователя\n";
+            if (string.IsNullOrWhiteSpace(txtUserRole.Text))
+                mes += "Введите телефон пользователя\n";
             if (string.IsNullOrWhiteSpace(txtUserLogin.Text))
-                mes += "Введите логин пользователя\n";
+                mes += "Выберите роль пользователя\n";
             if (string.IsNullOrWhiteSpace(txtPassword.Password))
                 mes += "Введите пароль пользователя\n";
             if (string.IsNullOrWhiteSpace(dapicCalendar.Text))
@@ -62,6 +65,7 @@ namespace HaidressersApp.View.Windows
                 Surname = txtUsersurname.Text,
                 Telephone = txtUserTelephone.Text,
                 Login = txtUserLogin.Text,
+                Role = txtUserRole.SelectedItem as Role,
                 Password = txtPassword.Password,
                 DateBirth = Convert.ToDateTime(dapicCalendar.Text)
             };

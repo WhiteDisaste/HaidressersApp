@@ -70,5 +70,10 @@ namespace HaidressersApp
         {
             NavigationFrm.Navigate(new Home());
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("У вас ноль уведомлений!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }

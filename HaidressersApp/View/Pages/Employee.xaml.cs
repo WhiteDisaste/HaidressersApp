@@ -51,7 +51,7 @@ namespace HaidressersApp.View.Pages
             if (txtActivityName.SelectedIndex == 1)
                 CustomersList.ItemsSource = select.FindAll(x => x.Role.Title == "barber").ToList();
             if (txtActivityName.SelectedIndex == 2)
-                CustomersList.ItemsSource = select.FindAll(x => x.Role.Title == "user").ToList();
+                CustomersList.ItemsSource = select.FindAll(x => x.Role.Title == "client").ToList();
         }
     }
 }

@@ -21,8 +21,8 @@
                         Width="200" Cursor="IBeam"/>
                     <TextBlock 
                         Style="{StaticResource TextTextBlock}"
-                        Width="80"
-                        Text="SEARCH FIELD..."
+                        Width="120"
+                        Text="Search Record..."
                         x:Name="SearchTextTextBlock"/>
                 </Grid>
                 <Button Margin="10 10 20 10" x:Name="AddBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}"
@@ -44,8 +44,8 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Date, StringFormat=dd/MM/yyyy}"/>
-                    <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding User.Surname}"/>
-                    <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding User.Name}"/>
+                    <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding Surname}"/>
+                    <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding Name}"/>
                 </GridView>
             </ListView.View>
         </ListView>

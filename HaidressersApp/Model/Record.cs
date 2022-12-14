@@ -14,10 +14,18 @@ namespace HaidressersApp.Model
     
     public partial class Record
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Record()
+        {
+            this.Uchet = new HashSet<Uchet>();
+        }
+    
         public int Id { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> IdUser { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
     
-        public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Uchet> Uchet { get; set; }
     }
 }

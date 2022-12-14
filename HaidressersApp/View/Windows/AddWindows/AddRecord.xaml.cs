@@ -47,7 +47,8 @@ namespace HaidressersApp.View.Windows
             }
             Record record = new Record()
             {
-                User = txtUsername.SelectedItem as User,
+                Name = txtUsername.Text,
+                Surname = txtUsersurname.Text,
                 Date = (DateTime)dapicCalendar.SelectedDate
             };
             ConnectClass.entities.Record.Add(record);

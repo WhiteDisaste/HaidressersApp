@@ -25,16 +25,20 @@ namespace HaidressersApp.View.Windows
         public UpdateRecord(Record record)
         {
             InitializeComponent();
-            ConnectClass.entities = new Model.HairdressersAppDEminEntities1();
-            txtUsername.ItemsSource = record.User.Surname;
+            ConnectClass.entities = new Model.HairdressersAppDEminEntities2();
+            txtUsername.DataContext = record.Name;
+            txtUsersurname.DataContext = record.Surname;
+            dapicCalendar.DataContext = record.Date;
+            
         }
 
         private void LogimBtn_Click_1(object sender, RoutedEventArgs e)
         {
             Record record = new Record()
             {
-                Date = Convert.ToDateTime(dapicCalendar.Text),
-                User = txtUsername.SelectedItem as User
+                Name = txtUsername.Text,
+                Surname = txtUsersurname.Text,
+                Date = Convert.ToDateTime(dapicCalendar.Text)             
             };
             
             try
@@ -52,7 +56,7 @@ namespace HaidressersApp.View.Windows
             }
             catch (Exception ex)
             {
-
+                MessageBoxResult messageBoxResult = MessageBox.Show("Ошибка");
             }
         }
 

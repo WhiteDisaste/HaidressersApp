@@ -27,9 +27,7 @@ namespace HaidressersApp.View.Pages
         public Record()
         {
             InitializeComponent();
-
-            CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();
-            CustomersList.ItemsSource = ConnectClass.entities.User.ToList();
+            CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();           
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -86,7 +84,7 @@ namespace HaidressersApp.View.Pages
 
             Sweep = Sweep.Where(Cookie => 
             Cookie.Date.ToString().ToLower().Contains(SearchTextBox.Text.ToLower()) || 
-            Cookie.User.ToString().Contains(SearchTextBox.Text.ToLower())).ToList(); 
+            Cookie.Surname.ToString().ToLower().Contains(SearchTextBox.Text.ToLower())).ToList(); 
 
             CustomersList.ItemsSource = Sweep.OrderBy(Cookie => Cookie.Id).ToList(); 
         }
