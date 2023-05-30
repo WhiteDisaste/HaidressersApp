@@ -1,0 +1,119 @@
+﻿<Page x:Class="HaidressersApp.View.Pages.ProductsCatalog"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HaidressersApp.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductsCatalog">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Grid HorizontalAlignment="Left" Width="200" Height="40" Margin="10">
+                    <TextBox
+                        x:Name="SearchTextBox"
+                        Width="200" Cursor="IBeam"/>
+                    <TextBlock 
+                        Style="{StaticResource TextTextBlock}"
+                        Width="120"
+                        Text="Поиск изделия..."
+                        x:Name="SearchTextTextBlock"/>
+                </Grid>
+                <ComboBox Width="200" Margin="340 14 0 0"   HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <TextBlock>Tom</TextBlock>
+                    <TextBlock>Bob</TextBlock>
+                    <TextBlock>Sam</TextBlock>
+                    <TextBlock>Alice</TextBlock>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <ListView Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="30 20">
+                    <Image Source="/Assets/Pages/AppleCook.jpg" Width="200"/>
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <StackPanel Orientation="Vertical" Margin=" 0">
+                            <TextBlock Text="Пирог яблочный"/>
+                            <TextBlock Text="Цена 250 рублей"/>
+                        </StackPanel>
+                        <Button Margin="35 0 0 0">
+                            <materialDesign:PackIcon Kind="Plus" Width="20" Height="20" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="40 20">
+                    <Image Source="C:\Users\ger-m\Source\Repos\WhiteDisaste\HaidressersApp\HaidressersApp\Assets\Pages\MeetCook.jpeg" Width="200"/>
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <StackPanel Orientation="Vertical" Margin=" 0">
+                            <TextBlock Text="Пирог с мясом"/>
+                            <TextBlock Text="Цена 450 рублей"/>
+                        </StackPanel>
+                        <Button Margin="35 0 0 0">
+                            <materialDesign:PackIcon Kind="Plus" Width="20" Height="20" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="20 20" HorizontalAlignment="Right">
+                    <Image Source="/Assets/Pages/vishnevyi-pirog.jpg" Width="200"/>
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <StackPanel Orientation="Vertical" Margin=" 0">
+                            <TextBlock Text="Пирог вишневый"/>
+                            <TextBlock Text="Цена 150 рублей"/>
+                        </StackPanel>
+                        <Button Margin="35 0 0 0">
+                            <materialDesign:PackIcon Kind="Plus" Width="20" Height="20" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+                
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="30 20">
+                    <Image Source="/Assets/Pages/strawberry.jpg" Width="200"/>
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <StackPanel Orientation="Vertical" Margin=" 0">
+                            <TextBlock Text="Пирок клубничый"/>
+                            <TextBlock Text="Цена 250 рублей"/>
+                        </StackPanel>
+                        <Button Margin="35 0 0 0">
+                            <materialDesign:PackIcon Kind="Plus" Width="20" Height="20" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="40 20">
+                    <Image Source="C:\Users\ger-m\Source\Repos\WhiteDisaste\HaidressersApp\HaidressersApp\Assets\Pages\PumkinCook.jpeg" Width="200"/>
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <StackPanel Orientation="Vertical" Margin=" 0">
+                            <TextBlock Text="Пирог тыквенный"/>
+                            <TextBlock Text="Цена 550 рублей"/>
+                        </StackPanel>
+                        <Button Margin="35 0 0 0">
+                            <materialDesign:PackIcon Kind="Plus" Width="20" Height="20" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="20 20" HorizontalAlignment="Right">
+                    <Image Height="120" Source="C:\Users\ger-m\Source\Repos\WhiteDisaste\HaidressersApp\HaidressersApp\Assets\Pages\OrangeCook.jpeg" Width="200"/>
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <StackPanel Orientation="Vertical" Margin=" 0">
+                            <TextBlock Text="Пирог апельсиновый"/>
+                            <TextBlock Text="Цена 300 рублей"/>
+                        </StackPanel>
+                        <Button Margin="35 0 0 0">
+                            <materialDesign:PackIcon Kind="Plus" Width="20" Height="20" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+        </ListView>
+        
+    </Grid>
+</Page>
+

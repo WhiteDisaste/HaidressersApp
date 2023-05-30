@@ -83,7 +83,7 @@
             <BeginStoryboard x:Name="CloseMenu_BeginStoryboard" Storyboard="{StaticResource CloseMenu}"/>
         </EventTrigger>
     </Window.Triggers>
-    <Grid Background="#FF673AB7">
+    <Grid Background="#FFFFC107">
         <StackPanel x:Name="StackPanelMenu" Width="250" HorizontalAlignment="Left" Margin="-250 0 0 0" RenderTransformOrigin="0.5,0.5">
             <StackPanel.RenderTransform>
                 <TransformGroup>
@@ -95,7 +95,7 @@
             </StackPanel.RenderTransform>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="70" HorizontalAlignment="Center">
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10">
-                    <materialDesign:PackIcon Kind="Settings" Width="40" Height="40" Foreground="#DDFFFFFF"/>
+                    <materialDesign:PackIcon  Width="40" Height="40" Foreground="{x:Null}"/>
                 </Button>
                 <Button x:Name="button" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" BorderBrush="{x:Null}" Padding="0" Width="80" Height="80" Margin="10" RenderTransformOrigin="0.5,0.5">
                     <Button.RenderTransform>
@@ -111,7 +111,7 @@
                     </Button.Background>
                 </Button>
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Width="50" Height="50" Margin="10">
-                    <materialDesign:PackIcon Kind="InformationOutline" Width="40" Height="40" Foreground="#DDFFFFFF"/>
+                    
                 </Button>
             </StackPanel>
             <ListView>
@@ -127,7 +127,7 @@
                     <Button x:Name="HomeBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="HomeBtn_Click">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
                             <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
-                            <TextBlock Text="Home" Margin="10" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Главная" Margin="10" VerticalAlignment="Center" Foreground="White"/>
                         </StackPanel>
                     </Button>
                 </ListViewItem>
@@ -142,8 +142,8 @@
                     </ListViewItem.RenderTransform>
                     <Button x:Name="ServiceBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="ServiceBtn_Click">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
-                        <materialDesign:PackIcon Kind="ServiceToolbox" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
-                        <TextBlock Text="Service" Margin="10" VerticalAlignment="Center" Foreground="White"/>
+                        <materialDesign:PackIcon Kind="Food" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+                        <TextBlock Text="Продукты" Margin="10" VerticalAlignment="Center" Foreground="White"/>
                     </StackPanel>
                     </Button>
                 </ListViewItem>
@@ -159,10 +159,11 @@
                     <Button x:Name="EmployeeBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="EmployeeBtn_Click">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
                             <materialDesign:PackIcon Kind="People" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
-                            <TextBlock Text="Employee" Margin="10" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Курьеры" Margin="10" VerticalAlignment="Center" Foreground="White"/>
                         </StackPanel>
                     </Button>
                 </ListViewItem>
+                
                 <ListViewItem x:Name="listViewItem3" Height="60" RenderTransformOrigin="0.5,0.5">
                     <ListViewItem.RenderTransform>
                         <TransformGroup>
@@ -172,11 +173,11 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </ListViewItem.RenderTransform>
-                    <Button x:Name="RecordBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="RecordBtn_Click">
+                    <Button x:Name="BasketBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="BasketBtn_Click">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
-                        <materialDesign:PackIcon Kind="Book" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
-                        <TextBlock Text="Record" Margin="10" VerticalAlignment="Center" Foreground="White"/>
-                    </StackPanel>
+                            <materialDesign:PackIcon Kind="Basket" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
+                            <TextBlock Text="Корзина" Margin="10" VerticalAlignment="Center" Foreground="White"/>
+                        </StackPanel>
                     </Button>
                 </ListViewItem>
                 <ListViewItem x:Name="listViewItem4" Height="60" RenderTransformOrigin="0.5,0.5">
@@ -191,7 +192,7 @@
                     <Button x:Name="BackBtn" Style="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="BackBtn_Click">
                         <StackPanel Orientation="Horizontal" Margin="10 0">
                             <materialDesign:PackIcon Kind="Backburger" Width="30" Height="30" VerticalAlignment="Center" Margin="5" Foreground="White"/>
-                            <TextBlock Text="Back" Margin="10" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Назад" Margin="10" VerticalAlignment="Center" Foreground="White"/>
                         </StackPanel>
                     </Button>
                 </ListViewItem>
@@ -211,14 +212,14 @@
                 <ColumnDefinition Width="250"/>
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="1" Background="#FF673AB7">
-                <Image Height="150" VerticalAlignment="Top"  Stretch="UniformToFill"/>
-                <Ellipse Height="100" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10 100" Stroke="White">
+            <Grid Grid.Column="1" Background="#FFFFC107">
+                <Image Height="100" VerticalAlignment="Top"  Stretch="UniformToFill"/>
+                <Ellipse Height="100" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 100" Stroke="White">
                     <Ellipse.Fill>
                         <ImageBrush  Stretch="UniformToFill" ImageSource="/Assets/Icons/logo.png"/>
                     </Ellipse.Fill>
                 </Ellipse>
-                <TextBlock Text="Barber Shop" Foreground="White" FontSize="24" FontFamily="Nirmala UI Semilight" Margin="10 100" VerticalAlignment="Top"/>
+                <TextBlock Text="Delicious Cakes" Foreground="White" FontSize="24" FontFamily="Nirmala UI Semilight" Margin="10 100" VerticalAlignment="Top"/>
                 <StackPanel Margin="0 150">
                     <Grid Height="60" Margin="20 50 20 0">
                         <Grid.ColumnDefinitions>
@@ -244,7 +245,7 @@
                     </Grid>
 
                     <TextBlock TextWrapping="Wrap" Margin="10" Foreground="#FFFBFBFB" FontSize="14">
-                        Наша парикмахерская Barber Shop входит в топ 50 парикмахерских в Москве, так же мы имеем много хороших отзывов.
+                        Наша кондитерская Delicious Cakes входит в топ 50 кондитерских в Москве, так же мы имеем много хороших отзывов.
                     </TextBlock>
                 </StackPanel>
             </Grid>
@@ -277,6 +278,9 @@
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="40" HorizontalAlignment="Right" Margin="10">
             <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DDFFFFFF" Click="Button_Click">
                 <materialDesign:PackIcon Kind="Bell"/>
+            </Button>
+            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DDFFFFFF" >
+                <materialDesign:PackIcon Kind="Account"/>
             </Button>
             <Button x:Name="ButtonClose" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="30" Padding="0" Background="{x:Null}" Foreground="#DDFFFFFF" BorderBrush="{x:Null}" Click="ButtonClose_Click">
                 <materialDesign:PackIcon Kind="Power"/>

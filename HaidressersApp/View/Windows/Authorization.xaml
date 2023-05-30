@@ -16,21 +16,7 @@
                          Margin="25" materialDesign:ShadowAssist.ShadowDepth="Depth4">
         <materialDesign:DialogHost CloseOnClickAway="True" x:Name="DialogHost">
             <StackPanel>
-                <materialDesign:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0"
-                                         PlacementMode="BottomAndAlignRightEdges"
-                                         StaysOpen="False" Height="25">
-                    <StackPanel>
-                        <StackPanel Margin="16 10 0 6" Orientation="Horizontal"
-                                HorizontalAlignment="Center">
-                            <TextBlock VerticalAlignment="Center" Text="Тема"/>
-                            <ToggleButton Cursor="Hand" ToolTip="Enable Dark Mode" Margin="12 0 8 0"
-                                      x:Name="ThemeToggle" IsChecked="{Binding IsDarkTheme}"
-                                      Click="ThemeToggle_Click"/>
-                        </StackPanel>
-                        <Button x:Name="btn_exit" ToolTip="Close Application"
-                                Content="Выйти" Click="btn_exit_Click"/>
-                    </StackPanel>
-                </materialDesign:PopupBox>
+              
                 <Border Width="100" Height="100" CornerRadius="50" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="/Assets/Icons/logo.png" 
                       />
@@ -39,7 +25,7 @@
                 <TextBlock Margin="0 25 0 5" HorizontalAlignment="Center"
                            FontSize="28" FontWeight="Bold" Text="Добро пожаловать в"/>
                 <TextBlock Margin="0 10 0 5" HorizontalAlignment="Center"
-                           FontSize="28" FontWeight="Bold" Text="Barber Shop"/>
+                           FontSize="28" FontWeight="Bold" Text="Delicious Cakes"/>
                 <TextBlock Margin="0 25 0 5" HorizontalAlignment="Center"
                            FontSize="17" FontWeight="SemiBold" Text="Введите данные чтобы войти"/>
                 <TextBox Margin="0 50 0 0" Name="txtUsername" Width="300"

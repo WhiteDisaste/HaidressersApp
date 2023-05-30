@@ -25,7 +25,7 @@
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="20" Color="#ffeeeeee"/>
             </Grid.Effect>
-            <Image Source="/Assets/Pages/1.jpg" Stretch="UniformToFill"/>
+            <Image Source="/Assets/Pages/5.jpg" Stretch="UniformToFill"/>
             <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
                 <materialDesign:PackIcon Kind="Heart" Foreground="white">
 
@@ -38,7 +38,7 @@
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="20" Color="#ffeeeeee"/>
             </Grid.Effect>
-            <Image Source="/Assets/Pages/2.jpg" Stretch="UniformToFill"/>
+            <Image Source="/Assets/Pages/1.jpg" Stretch="UniformToFill"/>
             <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
                 <materialDesign:PackIcon Kind="Heart" Foreground="White">
 
@@ -51,7 +51,7 @@
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="20" Color="#ffeeeeee"/>
             </Grid.Effect>
-            <Image Source="/Assets/Pages/3.jpg" Stretch="UniformToFill"/>
+            <Image Source="/Assets/Pages/6.jpg" Stretch="UniformToFill"/>
             <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
                 <materialDesign:PackIcon Kind="Heart" Foreground="White">
 
@@ -64,7 +64,7 @@
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="20" Color="#ffeeeeee"/>
             </Grid.Effect>
-            <Image Source="/Assets/Pages/4.jpg" Stretch="UniformToFill"/>
+            <Image Source="/Assets/Pages/7.jpg" Stretch="UniformToFill"/>
             <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
                 <materialDesign:PackIcon Kind="Heart" Foreground="White">
 
@@ -77,7 +77,7 @@
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="20" Color="#ffeeeeee"/>
             </Grid.Effect>
-            <Image Source="/Assets/Pages/6.jpg" Stretch="UniformToFill"/>
+            <Image Source="/Assets/Pages/9.jpg" Stretch="UniformToFill"/>
             <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
                 <materialDesign:PackIcon Kind="Heart" Foreground="White">
 

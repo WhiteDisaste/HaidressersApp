@@ -42,8 +42,8 @@ namespace HaidressersApp.View.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddRecord record = new AddRecord();
-            record.Show();
+            //AddRecord record = new AddRecord();
+            //record.Show();
         }
              
         private void Delettn_Click(object sender, RoutedEventArgs e)
@@ -59,9 +59,9 @@ namespace HaidressersApp.View.Pages
       
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
-            Model.Record record = (Model.Record) CustomersList.SelectedItem;
-            UpdateRecord update = new UpdateRecord(record);
-            update.Show();  
+            //Model.Record record = (Model.Record) CustomersList.SelectedItem;
+            //UpdateRecord update = new UpdateRecord(record);
+            //update.Show();  
             
         }
 
