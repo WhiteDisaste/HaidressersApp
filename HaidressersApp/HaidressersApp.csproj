@@ -109,9 +109,6 @@
     <Compile Include="View\Pages\ProductsCatalog.xaml.cs">
       <DependentUpon>ProductsCatalog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Pages\Profile.xaml.cs">
-      <DependentUpon>Profile.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Pages\Record.xaml.cs">
       <DependentUpon>Record.xaml</DependentUpon>
     </Compile>
@@ -123,6 +120,9 @@
     </Compile>
     <Compile Include="View\Windows\CreateAccount.xaml.cs">
       <DependentUpon>CreateAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\Profile.xaml.cs">
+      <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Windows\СhoosingOrder.xaml.cs">
       <DependentUpon>СhoosingOrder.xaml</DependentUpon>
@@ -140,10 +140,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pages\ProductsCatalog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Pages\Profile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Windows\CreateAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\Profile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

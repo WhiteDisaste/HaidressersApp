@@ -10,19 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HaidressersApp.View.Pages
+namespace HaidressersApp.View.Windows
 {
     /// <summary>
     /// Логика взаимодействия для Profile.xaml
     /// </summary>
-    public partial class Profile : Page
+    public partial class Profile : Window
     {
         public Profile()
         {
-            InitializeComponent();
+            InitializeComponent();           
+        }
+
+        private void SignupBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

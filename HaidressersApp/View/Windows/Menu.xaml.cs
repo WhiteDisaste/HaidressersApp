@@ -56,7 +56,7 @@ namespace HaidressersApp
 
         private void EmployeeBtn_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationFrm.Navigate(new Employee());
+            NavigationFrm.Navigate(new Record());
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -73,12 +73,19 @@ namespace HaidressersApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("У вас ноль уведомлений!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("У вас нет уведомлений!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void BasketBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationFrm.Navigate(new Basket());
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Profile profile = new Profile();
+            profile.Show();
+            
         }
     }
 }

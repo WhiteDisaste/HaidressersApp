@@ -13,8 +13,17 @@
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Assets/Icons/logo.png" Margin="10" Width="80" Height="70"></Image>
                     <StackPanel>
-                        <TextBlock Text="Корзина (1)" Margin="0 20 0 10" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
-                        <TextBlock Text="К оплате : 450 рублей" Margin="0 0" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Корзина" Margin="0 20 0 10" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+                    <TextBox Margin="0 22 0 10" FontWeight="Bold" FontSize="16" x:Name="txtammount" BorderBrush="{x:Null}" Width="30" Text="1" TextAlignment="Center"></TextBox>
+                </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal">
+                    <TextBlock FontWeight="Bold" FontSize="16" Text="К оплате: " Margin="0 0" HorizontalAlignment="Left" VerticalAlignment="Center" /> 
+                    <TextBox Margin="0 0 15 0" FontWeight="Bold" FontSize="16" x:Name="txtsumma" BorderBrush="{x:Null}" Width="40" Text="150" TextAlignment="Center"></TextBox>
+                    <TextBlock FontWeight="Bold" FontSize="16" Text="рублей" Margin="0 0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                </StackPanel>
+                        
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Margin="20 20">
@@ -22,17 +31,17 @@
                         <Image Source="/Assets/Pages/vishnevyi-pirog.jpg" Width="200"/>
                         <StackPanel Orientation="Vertical" Margin=" 10">
                             <TextBlock Text="Пирог с вишней"/>
-                            <TextBlock Text="Цена 450 рублей"/>
+                            <TextBlock Text="Цена 150 рублей"/>
 
                             <StackPanel Orientation="Horizontal" Margin="0 20">
 
-                                <Button Width="58" Height="30" Margin="0 0 0 0">
+                                <Button Width="58" Height="30" Margin="0 0 0 0" Click="Button_Click_1">
                                     <materialDesign:PackIcon Kind="Plus" Width="20" Height="20" VerticalAlignment="Center" Margin="5" Foreground="White"/>
                                 </Button>
-                                <TextBox BorderBrush="{x:Null}" Margin="10 0" Width="30" Text="1" TextAlignment="Center">
+                        <TextBox x:Name="txtselect" BorderBrush="{x:Null}" Margin="10 0" Width="30" Text="1" TextAlignment="Center">
                                     
                                 </TextBox>
-                                <Button Width="58" Height="30" Margin="0 0 0 0">
+                                <Button Width="58" Height="30" Margin="0 0 0 0" Click="Button_Click">
                                     <materialDesign:PackIcon Kind="Minus" Width="20" Height="20" VerticalAlignment="Center" Margin="5" Foreground="White"/>
                                 </Button>
                             </StackPanel>

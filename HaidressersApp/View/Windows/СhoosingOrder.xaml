@@ -30,14 +30,14 @@
                         <Button Margin="0 20 0 0" Name="SignupBtn" Style="{StaticResource MaterialDesignFlatButton}"
                         materialDesign:ShadowAssist.ShadowDepth="Depth0"
                         Height="53" Width="200" materialDesign:ButtonAssist.CornerRadius="10"
-                        FontSize="18" Content="Доставка на дом" Cursor="Hand"/>
+                        FontSize="18" Content="Доставка на дом" Cursor="Hand" Click="SignupBtn_Click"/>
                     </StackPanel>
                     <StackPanel Margin="0 10">
                         <Image Source="/Assets/Icons/OIP (1).jpg" Width="100" Height="100"/>
                         <Button Margin="0 20 0 0" Name="Btn" Style="{StaticResource MaterialDesignFlatButton}"
                         materialDesign:ShadowAssist.ShadowDepth="Depth0"
                         Height="53" Width="200" materialDesign:ButtonAssist.CornerRadius="10"
-                        FontSize="18" Content="Самовывоз" Cursor="Hand"/>
+                        FontSize="18" Content="Самовывоз" Cursor="Hand" Click="Btn_Click"/>
                     </StackPanel>
                 </StackPanel>
                 

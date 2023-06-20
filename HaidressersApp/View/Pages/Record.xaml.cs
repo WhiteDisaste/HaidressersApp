@@ -27,50 +27,25 @@ namespace HaidressersApp.View.Pages
         public Record()
         {
             InitializeComponent();
-            CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();           
+            CustomersList.ItemsSource = ConnectClass.entities.Users.ToList();           
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();
+            //CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();
         }
 
         private void CustomersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-        }
-
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //AddRecord record = new AddRecord();
-            //record.Show();
-        }
-             
-        private void Delettn_Click(object sender, RoutedEventArgs e)
-        {
-            if (MessageBox.Show("Удалить?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes) 
-            {
-                var record = CustomersList.SelectedItem as Model.Record; 
-                ConnectClass.entities.Record.Remove(record); 
-                ConnectClass.entities.SaveChanges(); 
-                CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();               
-            }
-        }
-      
-        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
-        {
-            //Model.Record record = (Model.Record) CustomersList.SelectedItem;
-            //UpdateRecord update = new UpdateRecord(record);
-            //update.Show();  
-            
-        }
+            //CustomersList.ItemsSource =
+        } 
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (SearchTextBox.Text.Length == 0) 
             {
                 SearchTextTextBlock.Visibility = Visibility.Visible; 
-                CustomersList.ItemsSource = ConnectClass.entities.Record.ToList();
+                CustomersList.ItemsSource = ConnectClass.entities.Users.ToList();
             }
             else
             {               
@@ -80,11 +55,11 @@ namespace HaidressersApp.View.Pages
         }
         private void GetSearch() 
         {
-            var Sweep = ConnectClass.entities.Record.ToList(); 
+            var Sweep = ConnectClass.entities.Users.ToList(); 
 
             Sweep = Sweep.Where(Cookie => 
-            Cookie.Date.ToString().ToLower().Contains(SearchTextBox.Text.ToLower()) || 
-            Cookie.Surname.ToString().ToLower().Contains(SearchTextBox.Text.ToLower())).ToList(); 
+            Cookie.DateBirth.ToString().ToLower().Contains(SearchTextBox.Text.ToLower()) || 
+            Cookie.Name.ToString().ToLower().Contains(SearchTextBox.Text.ToLower())).ToList(); 
 
             CustomersList.ItemsSource = Sweep.OrderBy(Cookie => Cookie.Id).ToList(); 
         }

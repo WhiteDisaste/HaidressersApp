@@ -27,17 +27,17 @@ namespace HaidressersApp.View.Pages
         public Services()
         {
             InitializeComponent();
-            CustomersList.ItemsSource = ConnectClass.entities.Service.ToList();
+            //CustomersList.ItemsSource = ConnectClass.entities.Service.ToList();
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            CustomersList.ItemsSource = ConnectClass.entities.Service.ToList();
+            //CustomersList.ItemsSource = ConnectClass.entities.Service.ToList();
         }
 
         private void CustomersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Service journal = (Service)CustomersList.SelectedItem;
+            //Service journal = (Service)CustomersList.SelectedItem;
         }
 
         private void SelectBtn_Click(object sender, RoutedEventArgs e)

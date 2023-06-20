@@ -27,14 +27,12 @@ namespace HaidressersApp.View.Pages
         public Employee()
         {
             InitializeComponent();
-            txtActivityName.ItemsSource = ConnectClass.entities.Role.ToList();
-            CustomersList.ItemsSource = ConnectClass.entities.User.ToList();
-            CustomersList.ItemsSource = ConnectClass.entities.Role.ToList();
+            
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            CustomersList.ItemsSource = ConnectClass.entities.User.ToList();
+           
         }
 
         private void CustomersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -44,14 +42,14 @@ namespace HaidressersApp.View.Pages
 
         private void txtActivityName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var select = ConnectClass.entities.User.ToList();
             
-            if (txtActivityName.SelectedIndex == 0)
-               CustomersList.ItemsSource = select.FindAll(x => x.Role.Title == "admin").ToList();
-            if (txtActivityName.SelectedIndex == 1)
-                CustomersList.ItemsSource = select.FindAll(x => x.Role.Title == "barber").ToList();
-            if (txtActivityName.SelectedIndex == 2)
-                CustomersList.ItemsSource = select.FindAll(x => x.Role.Title == "client").ToList();
+            
+            //if (txtActivityName.SelectedIndex == 0)
+            //   CustomersList.ItemsSource = select.FindAll(x => x.Role.Title == "admin").ToList();
+            //if (txtActivityName.SelectedIndex == 1)
+            //    CustomersList.ItemsSource = select.FindAll(x => x.Role.Title == "barber").ToList();
+            //if (txtActivityName.SelectedIndex == 2)
+            //    CustomersList.ItemsSource = select.FindAll(x => x.Role.Title == "client").ToList();
         }
     }
 }

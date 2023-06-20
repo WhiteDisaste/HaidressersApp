@@ -57,52 +57,31 @@ namespace HaidressersApp.View.Windows
 
         private void LogimBtn_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
-            //    var userObj = ConnectClass.entities.User.Where(x => x.Login == txtUsername.Text && x.Password == txtPassword.Password).FirstOrDefault();
-            //    if (userObj == null)
-            //    {
-            //        MessageBox.Show("Такого пользователя нет", "Mistake", MessageBoxButton.OK, MessageBoxImage.Error);
-            //    }
-            //    else
-            //    {
-            //        switch (userObj.IdRole)
-            //        {
-            //            case 1:
-            //                MessageBox.Show("Hello, Administrator " + userObj.Name + "!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            //                break;
+            try
+            {
+                var userObj = ConnectClass.entities.Users.Where(x => x.Login == txtUsername.Text && x.Password == txtPassword.Password).FirstOrDefault();
+                if (userObj == null)
+                {
+                    MessageBox.Show("Такого пользователя нет", "Mistake", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {                 
+                    MessageBox.Show("Здравствуйте, клиент " + userObj.Name + "!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);                   
+                    Menu au = new Menu();
+                    au.Show();
+                    Close();
 
-            //            case 2:
-            //                MessageBox.Show("Hello, Barber " + userObj.Name + "!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            //                break;
+                }
+            }
+            catch (Exception Ex)
+            {
 
-            //            case 3:
-            //                MessageBox.Show("Hello, Client " + userObj.Name + "!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            //                break;
+                MessageBox.Show("Mistake" + Ex.Message.ToString() + "Critical operation of the application", "Notification", MessageBoxButton.OK, MessageBoxImage.Warning);
 
-            //            default:
-            //                MessageBox.Show("No data detected!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-            //                break;
-            //        }
-            //    }
-            //}
-            //catch (Exception Ex)
-            //{
+            }
+            
 
-            //    MessageBox.Show("Mistake" + Ex.Message.ToString() + "Critical operation of the application", "Notification", MessageBoxButton.OK, MessageBoxImage.Warning);
-
-            //}
-            MessageBox.Show("Данные введены неправильно!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-            Menu au = new Menu();
-            au.Show();
-            Close();
-
-        }
-
-        //private void btn_exit_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Application.Current.Shutdown();
-        //}
+        }     
 
         private void SignupBtn_Click(object sender, RoutedEventArgs e)
         {

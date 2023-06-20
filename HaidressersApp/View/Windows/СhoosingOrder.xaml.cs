@@ -23,5 +23,17 @@ namespace HaidressersApp.View.Windows
         {
             InitializeComponent();
         }
+
+        private void SignupBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Ваш заказ оформлен вы выбрали доставку на дои" + "!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            Close();
+        }
+
+        private void Btn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Ваш заказ оформлен вы выбрали самовывоз"  + "!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            Close();
+        }
     }
 }
