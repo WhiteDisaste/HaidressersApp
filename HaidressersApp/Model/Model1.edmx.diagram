@@ -4,17 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c42fb6a71082407499c67c8b940c2bed" Name="Diagram1">
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.Record" Width="1.5" PointX="3" PointY="5.125" />
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.Role" Width="1.5" PointX="0.75" PointY="1.625" />
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.Service" Width="1.5" PointX="3" PointY="7.875" />
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" />
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.Uchet" Width="1.5" PointX="5.25" PointY="1.25" />
-        <EntityTypeShape EntityType="HairdressersAppDEminModel.User" Width="1.5" PointX="3" PointY="1" />
-        <AssociationConnector Association="HairdressersAppDEminModel.FK_Uchet_Record1" />
-        <AssociationConnector Association="HairdressersAppDEminModel.FK_User_Role" />
-        <AssociationConnector Association="HairdressersAppDEminModel.FK_Uchet_Service" />
-        <AssociationConnector Association="HairdressersAppDEminModel.FK_Uchet_User" />
+      <Diagram DiagramId="c18b51845cf7420885616b65bf006777" Name="Diagram1">
+        <EntityTypeShape EntityType="DashaSqlModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DashaSqlModel.Tovars" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DashaSqlModel.Users" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DashaSqlModel.FK_Users_Tovars" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

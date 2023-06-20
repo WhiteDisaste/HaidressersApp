@@ -12,12 +12,12 @@ namespace HaidressersApp.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Service
+    public partial class Tovars
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Service()
+        public Tovars()
         {
-            this.Uchet = new HashSet<Uchet>();
+            this.Users = new HashSet<Users>();
         }
     
         public int Id { get; set; }
@@ -25,6 +25,6 @@ namespace HaidressersApp.Model
         public Nullable<decimal> Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Uchet> Uchet { get; set; }
+        public virtual ICollection<Users> Users { get; set; }
     }
 }

@@ -19,9 +19,9 @@
                 </StackPanel>
                 <StackPanel Margin="20 20">
                     <StackPanel Orientation="Horizontal" Margin="0 10">
-                        <Image Source="C:\Users\ger-m\Source\Repos\WhiteDisaste\HaidressersApp\HaidressersApp\Assets\Pages\MeetCook.jpeg" Width="200"/>
+                        <Image Source="/Assets/Pages/vishnevyi-pirog.jpg" Width="200"/>
                         <StackPanel Orientation="Vertical" Margin=" 10">
-                            <TextBlock Text="Пирог с мясом"/>
+                            <TextBlock Text="Пирог с вишней"/>
                             <TextBlock Text="Цена 450 рублей"/>
 
                             <StackPanel Orientation="Horizontal" Margin="0 20">

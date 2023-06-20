@@ -13,10 +13,10 @@ namespace HaidressersApp.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HairdressersAppDEminEntities2 : DbContext
+    public partial class DashaSqlEntities : DbContext
     {
-        public HairdressersAppDEminEntities2()
-            : base("name=HairdressersAppDEminEntities2")
+        public DashaSqlEntities()
+            : base("name=DashaSqlEntities")
         {
         }
     
@@ -25,11 +25,8 @@ namespace HaidressersApp.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Record> Record { get; set; }
-        public virtual DbSet<Role> Role { get; set; }
-        public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Uchet> Uchet { get; set; }
-        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Tovars> Tovars { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }
